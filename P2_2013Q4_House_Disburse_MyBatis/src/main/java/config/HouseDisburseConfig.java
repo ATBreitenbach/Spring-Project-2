@@ -15,8 +15,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 @SpringBootApplication
 @ComponentScan({"disburse"})
-@MapperScan("mapper")
-@EnableJpaRepositories("repository")
+@MapperScan("disburse.mapper")
 public class HouseDisburseConfig {
 	@Bean
 	public DataSource dataSrc() throws SQLException {

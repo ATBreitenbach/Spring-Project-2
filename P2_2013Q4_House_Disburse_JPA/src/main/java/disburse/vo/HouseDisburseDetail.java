@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 @Entity
 @Table(name = "T_2013Q4_HOUSE_DISBURSE")
 public class HouseDisburseDetail {
@@ -16,7 +18,7 @@ public class HouseDisburseDetail {
 	@Column(nullable = false, name = "RECORDID")
 	private int recordId;
 	@Column(nullable = true, name = "BIOGUIDE_ID")
-	private String bioguideId;
+	private String bioGuideID;
 	@Column(nullable = true, name = "OFFICE")
 	private String office;
 	@Column(nullable = true, name = "CATEGORY")
@@ -30,21 +32,23 @@ public class HouseDisburseDetail {
 	@Column(nullable = true, name = "PURPOSE")
 	private String purpose;
 	@Column(nullable = true, name = "AMOUNT")
+	@JsonAlias("AMOUNT")
 	private double amount;
+	@JsonAlias("YEAR")
 	@Column(nullable = true, name = "YEAR")
 	private String year;
 	
+	public String getBioGuideID() {
+		return bioGuideID;
+	}
+	public void setBioGuideID(String bioGuideID) {
+		this.bioGuideID = bioGuideID;
+	}
 	public int getRecordId() {
 		return recordId;
 	}
 	public void setRecordId(int recordId) {
 		this.recordId = recordId;
-	}
-	public String getBioguideId() {
-		return bioguideId;
-	}
-	public void setBioguideId(String bioguideId) {
-		this.bioguideId = bioguideId;
 	}
 	public String getOffice() {
 		return office;
@@ -96,7 +100,7 @@ public class HouseDisburseDetail {
 	}
 	@Override
 	public String toString() {
-		return "HouseDisburseDetail [recordId=" + recordId + ", bioguideId=" + bioguideId + ", office=" + office
+		return "HouseDisburseDetail [recordId=" + recordId + ", bioguideId=" + bioGuideID + ", office=" + office
 				+ ", category=" + category + ", payee=" + payee + ", startDate=" + startDate + ", endDate=" + endDate
 				+ ", purpose=" + purpose + ", amount=" + amount + ", year=" + year + "]";
 	}

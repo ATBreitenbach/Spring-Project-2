@@ -3,7 +3,7 @@ package disburse.vo;
 public class HouseDisburseDetail {
 
 	private int recordId;
-	private String bioguideId;
+	private String bioGuideID;
 	private String office;
 	private String category;
 	private String payee;
@@ -13,17 +13,17 @@ public class HouseDisburseDetail {
 	private double amount;
 	private String year;
 	
+	public String getBioGuideID() {
+		return bioGuideID;
+	}
+	public void setBioGuideID(String bioGuideID) {
+		this.bioGuideID = bioGuideID;
+	}
 	public int getRecordId() {
 		return recordId;
 	}
 	public void setRecordId(int recordId) {
 		this.recordId = recordId;
-	}
-	public String getBioguideId() {
-		return bioguideId;
-	}
-	public void setBioguideId(String bioguideId) {
-		this.bioguideId = bioguideId;
 	}
 	public String getOffice() {
 		return office;
@@ -75,7 +75,7 @@ public class HouseDisburseDetail {
 	}
 	@Override
 	public String toString() {
-		return "HouseDisburseDetail [recordId=" + recordId + ", bioguideId=" + bioguideId + ", office=" + office
+		return "HouseDisburseDetail [recordId=" + recordId + ", bioguideId=" + bioGuideID + ", office=" + office
 				+ ", category=" + category + ", payee=" + payee + ", startDate=" + startDate + ", endDate=" + endDate
 				+ ", purpose=" + purpose + ", amount=" + amount + ", year=" + year + "]";
 	}

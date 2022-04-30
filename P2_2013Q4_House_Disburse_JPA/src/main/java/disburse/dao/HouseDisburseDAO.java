@@ -24,7 +24,12 @@ public class HouseDisburseDAO {
 		hdrepo.saveAll(hdList);
 	}
 	public List<HouseDisburseDetail> getAllHDDs() {
-		return hdrepo.findAll();
+		List<HouseDisburseDetail> hdList = hdrepo.findAll();
+		for (HouseDisburseDetail hd1 : hdList) {
+			hd1.setOffice(hd1.getOffice().toLowerCase());
+		}
+		return hdList;
 	}
+	
 	
 }
